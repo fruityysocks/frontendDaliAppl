@@ -1,0 +1,23 @@
+{
+  "name": "starterpack-fruityysocks",
+  "version": "1.0.0",
+  "description": "TODO: short project description, some screenshots",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dartmouth-cs52-25s/starterpack-fruityysocks.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dartmouth-cs52-25s/starterpack-fruityysocks/issues"
+  },
+  "homepage": "https://github.com/dartmouth-cs52-25s/starterpack-fruityysocks#readme",
+  "devDependencies": {
+    "vite": "^6.2.6"
+  }
+}
