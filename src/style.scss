@@ -1,18 +1,25 @@
+@import "tailwindcss";
+
 :root {
-    text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
-body, html {
-    font-family: "Roboto", sans-serif;
-    background: linear-gradient(to bottom, #87fdd2 0%,#f1f153 40%,#4e05e0 100%);
-    height: 100%;
+body,
+html {
+  font-family: "Roboto", sans-serif;
+  background: linear-gradient(to bottom, #87fdd2 0%, #f1f153 40%, #4e05e0 100%);
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .logo {
-    background-image: url('img/cow_pattern.jpg');
-    width: 100px;
-    height: 100px;
-    background-repeat: no-repeat;
-    background-size: contain;
-  }
-  
+  background-image: url("img/cow_pattern.jpg");
+  background-repeat: no-repeat;
+  background-size: contain;
+}

@@ -1,15 +1,16 @@
-import eslintPluginJsxA11y from 'eslint-plugin-jsx-a11y';
 import { defineConfig } from 'vite';
 import esslint from 'vite-plugin-eslint';
 import autoprefixer from 'autoprefixer';
+// eslint-disable-next-line import/no-unresolved
+import tailwindcss from '@tailwindcss/vite';
 
-// https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [ 
+  plugins: [
+    tailwindcss(),
     esslint(),
   ],
   css: {
-    postcss:{
+    postcss: {
       plugins: [
         autoprefixer(),
       ],

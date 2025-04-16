@@ -1,6 +1,7 @@
 {
   "name": "starterpack-fruityysocks",
   "version": "1.0.0",
+  "type": "module",
   "description": "TODO: short project description, some screenshots",
   "main": "src/index.js",
   "scripts": {
@@ -21,6 +22,7 @@
   },
   "homepage": "https://github.com/dartmouth-cs52-25s/starterpack-fruityysocks#readme",
   "devDependencies": {
+    "@tailwindcss/vite": "^4.1.4",
     "autoprefixer": "^10.4.21",
     "eslint": "^8.57.1",
     "eslint-config-airbnb": "^19.0.4",
@@ -33,6 +35,7 @@
     "vite-plugin-eslint": "^1.8.1"
   },
   "dependencies": {
-    "jquery": "^3.7.1"
+    "jquery": "^3.7.1",
+    "tailwindcss": "^4.1.4"
   }
 }
