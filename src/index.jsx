@@ -41,14 +41,16 @@ function FallBack(props) {
 function App(props) {
   return (
     <BrowserRouter>
-      <div>
+      <div className="app">
         <NavBar />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/posts/new" element={<NewProject />} />
-          <Route path="/posts/:id" element={<Detail />} />
-          <Route path="*" element={<FallBack />} />
-        </Routes>
+        <div className="notNavBar">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/posts/new" element={<NewProject />} />
+            <Route path="/posts/:id" element={<Detail />} />
+            <Route path="*" element={<FallBack />} />
+          </Routes>
+        </div>
       </div>
     </BrowserRouter>
   );

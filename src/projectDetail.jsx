@@ -23,10 +23,12 @@ export default function ProjectDetail() {
       <h2>{project.title}</h2>
       <p>{project.content}</p>
       <div>
-        <p> tags: </p>
+        <span> tags: </span>
         {tags.map((tag, i) => (
           // eslint-disable-next-line react/no-array-index-key
-          <span key={i}>{tag}</span>
+          <span key={i}>
+            {tag}{i < tags.length - 1 ? ', ' : ' '}
+          </span>
         ))}
       </div>
     </div>

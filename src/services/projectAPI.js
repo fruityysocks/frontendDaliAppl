@@ -1,11 +1,11 @@
 import axios from 'axios';
 
-const API_KEY = 'p_dharampal';
-const API_URL = `https://platform.cs52.me/api/posts?key=${API_KEY}`;
+const API_KEY = '?key=p_dharampal';
+const API_URL = 'https://platform.cs52.me/api/posts';
 
 const getProjects = async (term) => {
   try {
-    const response = await axios.get(`${API_URL}`, {
+    const response = await axios.get(`${API_URL}/${API_KEY}`, {
       params: {
         fields: ['coverUrl', 'title', 'content', 'tags'],
         term,
@@ -26,10 +26,7 @@ const getProjects = async (term) => {
 
 const postProject = async (project) => {
   try {
-    console.log('hi');
-    const response = await axios.post(`${API_URL}?key=p_dharampal`, project, {
-      headers: { authorization: API_KEY },
-    });
+    const response = await axios.post(`${API_URL}/${API_KEY}`, project);
     return response.data;
   } catch (error) {
     console.error('Error creating project:', error);
@@ -39,9 +36,7 @@ const postProject = async (project) => {
 
 const updateProject = async (project) => {
   try {
-    const response = await axios.patch(`${API_URL}/${project.id}`, project, {
-      headers: { authorization: API_KEY },
-    });
+    const response = await axios.patch(`${API_URL}/${project.id}/${API_KEY}`, project);
     return response.data;
   } catch (error) {
     console.error('Error updating project:', error);
@@ -51,9 +46,7 @@ const updateProject = async (project) => {
 
 const getProject = async ({ id }) => {
   try {
-    const response = await axios.get(`${API_URL}?key=p_dh/${id}`, {
-      headers: { authorization: API_KEY },
-    });
+    const response = await axios.get(`${API_URL}/${id}/${API_KEY}`);
     const projectWithTagsArray = {
       ...response.data,
       tags: response.data.tags?.split(',').map((t) => t.trim()) || [],
@@ -67,9 +60,7 @@ const getProject = async ({ id }) => {
 
 const deleteProject = async ({ id }) => {
   try {
-    const response = await axios.delete(`${API_URL}/${id}`, {
-      headers: { authorization: API_KEY },
-    });
+    const response = await axios.delete(`${API_URL}/${id}/${API_KEY}`);
     return response.data;
   } catch (error) {
     console.error('Error deleting project:', error);

@@ -52,7 +52,7 @@ const useStore = create(devtools(immer((set) => ({
     deletePost: async (id) => {
       await deleteProject({ id });
       set((draft) => {
-        draft.postSlice.all = draft.postSlice.all.filter((p) => p.id !== id);
+        draft.projectSlice.all = draft.projectSlice.all.filter((p) => p.id !== id);
       }, false, 'posts/delete');
     },
   },

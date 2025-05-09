@@ -1,4 +1,11 @@
 @import "tailwindcss";
+@import url("https://fonts.googleapis.com/css2?family=Itim&display=swap");
+
+.itim-regular {
+  font-family: "Itim", cursive;
+  font-weight: 70;
+  font-style: normal;
+}
 
 :root {
   text-size-adjust: 100%;
@@ -6,11 +13,18 @@
 
 body,
 html {
-  font-family: "Roboto", sans-serif;
+  font-family: "Itim", cursive;
   height: 100%;
 }
 
 body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.app {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -25,15 +39,18 @@ h1 {
 }
 
 img {
-  max-width: 100%;
-  height: auto;
+  max-height: 40vh;
+  width: auto !important;
   border-radius: 20px;
 }
 .navBar {
+  display: flex;
   position: fixed;
+  box-sizing: border-box;
   top: 0;
   left: 0;
   z-index: 100;
+  height: 5rem;
 }
 
 .navBar > nav {
@@ -56,7 +73,7 @@ img {
 .navBar > nav > ul > li > a {
   border: 3px solid #5493bb;
   border-radius: 20px;
-  padding: .7rem;
+  padding: 0.7rem;
   transition: 0.3s ease;
   text-decoration: none;
   white-space: wrap;
@@ -68,10 +85,13 @@ img {
   color: #fff;
 }
 
+.notNavBar {
+  padding-top: 5rem;
+}
 .addProject {
   display: flex;
   flex-direction: column;
-  justify-content: center;  
+  justify-content: center;
   align-items: self-start;
   width: 50vw;
   height: 100%;
@@ -91,7 +111,7 @@ img {
 }
 
 .addProjectForm > * {
- background-color: #fff;
+  background-color: #fff;
   border-radius: 20px;
   padding: 1rem;
   width: 40vw;
@@ -104,7 +124,7 @@ img {
   background-color: #5493bb;
   border: none;
   border-radius: 20px;
-  padding: .7rem;
+  padding: 0.7rem;
   font: inherit;
   color: #fff;
   cursor: pointer;
@@ -122,7 +142,7 @@ button:hover {
   flex-direction: column;
   align-items: self-start;
   justify-content: flex-start;
-  margin-top: 10rem;
+  padding-top: 55rem;
   width: 100%;
   height: 100%;
 }
@@ -141,19 +161,50 @@ button:hover {
   padding: 2rem;
   border-radius: 20px;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-  flex: 0 1 300px; 
+  flex: 0 1 300px;
 }
 
+.projectListHeader {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  padding: 2rem;
+}
+
+.filter {
+  background-color: #fff;
+  border-radius: 20px;
+  padding: 1rem;
+  width: 20vw;
+  margin: 1rem;
+  border: 3px solid #5493bb;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.filter:focus {
+  outline: none;
+  border: 3px solid #445089;
+}
+
+.projectCard {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
 
 .details {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 50vw;
-  height: 70vh;
-  background-color: #5493bb;
   padding: 2rem;
+  width: fit-content;
+  height: fit-content;
+  max-height: 70vh;
+  background-color: #5493bb;
   border-radius: 20px;
 }
 
@@ -166,3 +217,18 @@ button:hover {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
+.projectCardContent {
+  font-size: 1.7rem;
+}
+
+.deleteButton {
+  background-color: #445089;
+  border: none;
+  border-radius: 20px;
+  padding: 0.2rem 0.5rem;
+  color: #fff;
+  cursor: pointer;
+  width: fit-content;
+  align-self: flex-end;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
