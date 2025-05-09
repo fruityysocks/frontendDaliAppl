@@ -1,55 +1,54 @@
-import React, { useParams } from 'react';
+import React from 'react';
 import { createRoot } from 'react-dom/client';
 import './style.scss';
 import {
-  BrowserRouter, Routes, Route, NavLink,
+  BrowserRouter, Routes, Route,
 } from 'react-router';
-import Counter from './store/components/counter';
-import Controls from './store/components/controls';
+import NavBar from './navBar';
+import ProjectList from './projectList';
+import AddProject from './addProject';
+import ProjectDetail from './projectDetail';
 
-function About(props) {
-  return <div> All there is to know about me </div>;
+function Home(props) {
+  return (
+    <div>
+      <ProjectList />
+    </div>
+  );
 }
-function Welcome(props) {
-  return <div>Welcome</div>;
+
+function NewProject(props) {
+  return (
+    <div>
+      <AddProject />
+    </div>
+  );
 }
-function Test(props) {
-  const { id } = useParams();
-  return <div> ID: {id} </div>;
+
+function Detail(props) {
+  return (
+    <div>
+      <h1>Your Project</h1>
+      <ProjectDetail />
+    </div>
+  );
 }
+
 function FallBack(props) {
   return <div> URL not found </div>;
-}
-
-function Nav(props) {
-  return (
-    <nav>
-      <ul>
-        <li><NavLink to="/">Home</NavLink></li>
-        <li><NavLink to="/about">About</NavLink></li>
-        <li><NavLink to="/test/id1">test id1</NavLink></li>
-        <li><NavLink to="/test/id2">test id2</NavLink></li>
-      </ul>
-    </nav>
-  );
 }
 
 function App(props) {
   return (
     <BrowserRouter>
       <div>
-        <Nav />
+        <NavBar />
         <Routes>
-          <Route path="/" element={<Welcome />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/test/:id" element={<Test />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/posts/new" element={<NewProject />} />
+          <Route path="/posts/:id" element={<Detail />} />
           <Route path="*" element={<FallBack />} />
         </Routes>
-      </div>
-      <div>
-        <h1>Counter</h1>
-        <Counter />
-        <Controls />
       </div>
     </BrowserRouter>
   );

@@ -7,7 +7,6 @@
 body,
 html {
   font-family: "Roboto", sans-serif;
-  background: linear-gradient(to bottom, #87fdd2 0%, #f1f153 40%, #4e05e0 100%);
   height: 100%;
 }
 
@@ -17,3 +16,153 @@ body {
   justify-content: center;
   align-items: center;
 }
+
+h1 {
+  color: #5493bb;
+  font-size: 2rem;
+  margin: 0;
+  padding: 1rem;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 20px;
+}
+.navBar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+}
+
+.navBar > nav {
+  width: 100vw;
+}
+
+.navBar > nav > ul {
+  display: flex;
+  flex-direction: row;
+  background-color: #5493bb;
+  list-style: none;
+  padding: 1.5rem;
+}
+
+.navBar > nav > ul > li {
+  color: white;
+  font-size: 1.2rem;
+}
+
+.navBar > nav > ul > li > a {
+  border: 3px solid #5493bb;
+  border-radius: 20px;
+  padding: .7rem;
+  transition: 0.3s ease;
+  text-decoration: none;
+  white-space: wrap;
+  color: white;
+}
+
+.navBar > nav > ul > li > a:hover {
+  border: 3px solid #fdd7ad;
+  color: #fff;
+}
+
+.addProject {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;  
+  align-items: self-start;
+  width: 50vw;
+  height: 100%;
+}
+
+.addProjectForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: flex-end;
+  width: 45vw;
+  height: 100%;
+  background-color: #b8dbf1;
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.addProjectForm > * {
+ background-color: #fff;
+  border-radius: 20px;
+  padding: 1rem;
+  width: 40vw;
+  margin: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.submit {
+  align-items: center;
+  background-color: #5493bb;
+  border: none;
+  border-radius: 20px;
+  padding: .7rem;
+  font: inherit;
+  color: #fff;
+  cursor: pointer;
+  margin: 5px;
+  width: fit-content;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+button:hover {
+  background-color: #3b789e;
+}
+
+.projectList {
+  display: flex;
+  flex-direction: column;
+  align-items: self-start;
+  justify-content: flex-start;
+  margin-top: 10rem;
+  width: 100%;
+  height: 100%;
+}
+
+.projectListItem {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 1rem;
+  width: 100%;
+  padding: 2rem;
+}
+
+.projectListItem > * {
+  background-color: #b8dbf1;
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  flex: 0 1 300px; 
+}
+
+
+.details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50vw;
+  height: 70vh;
+  background-color: #5493bb;
+  padding: 2rem;
+  border-radius: 20px;
+}
+
+.details > * {
+  background-color: #fff;
+  border-radius: 20px;
+  padding: 1rem;
+  width: 40vw;
+  margin: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+

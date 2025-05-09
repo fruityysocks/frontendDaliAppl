@@ -1,0 +1,86 @@
+import axios from 'axios';
+
+const API_KEY = 'p_dharampal';
+const API_URL = `https://platform.cs52.me/api/posts?key=${API_KEY}`;
+
+const getProjects = async (term) => {
+  try {
+    const response = await axios.get(`${API_URL}`, {
+      params: {
+        fields: ['coverUrl', 'title', 'content', 'tags'],
+        term,
+      },
+    });
+    const projectsWithTagsArray = response.data.map((project) => ({
+      ...project,
+      tags: project.tags?.split(',').map((t) => t.trim()) || [],
+    }));
+
+    return projectsWithTagsArray;
+    // used chatGPT to convert the tags string to an array
+  } catch (error) {
+    console.error('Error fetching projects:', error);
+    throw error;
+  }
+};
+
+const postProject = async (project) => {
+  try {
+    console.log('hi');
+    const response = await axios.post(`${API_URL}?key=p_dharampal`, project, {
+      headers: { authorization: API_KEY },
+    });
+    return response.data;
+  } catch (error) {
+    console.error('Error creating project:', error);
+    throw error;
+  }
+};
+
+const updateProject = async (project) => {
+  try {
+    const response = await axios.patch(`${API_URL}/${project.id}`, project, {
+      headers: { authorization: API_KEY },
+    });
+    return response.data;
+  } catch (error) {
+    console.error('Error updating project:', error);
+    throw error;
+  }
+};
+
+const getProject = async ({ id }) => {
+  try {
+    const response = await axios.get(`${API_URL}?key=p_dh/${id}`, {
+      headers: { authorization: API_KEY },
+    });
+    const projectWithTagsArray = {
+      ...response.data,
+      tags: response.data.tags?.split(',').map((t) => t.trim()) || [],
+    };
+    return projectWithTagsArray;
+  } catch (error) {
+    console.error('Error getting project:', error);
+    throw error;
+  }
+};
+
+const deleteProject = async ({ id }) => {
+  try {
+    const response = await axios.delete(`${API_URL}/${id}`, {
+      headers: { authorization: API_KEY },
+    });
+    return response.data;
+  } catch (error) {
+    console.error('Error deleting project:', error);
+    throw error;
+  }
+};
+
+export {
+  getProjects,
+  postProject,
+  updateProject,
+  getProject,
+  deleteProject,
+};
