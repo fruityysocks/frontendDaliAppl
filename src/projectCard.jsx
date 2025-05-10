@@ -43,7 +43,7 @@ export default function ProjectCard({ project, onEdit }) {
       </div>
 
       <button type="button" onClick={handleEditClick} className="editButton">
-        Edit
+        edit
       </button>
 
       <button type="button" onClick={handleClick} className="deleteButton">
