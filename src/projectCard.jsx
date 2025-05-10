@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router';
 import useStore from './store/index';
 
-export default function ProjectCard({ project }) {
+export default function ProjectCard({ project, onEdit }) {
   const deletePost = useStore((s) => s.projectSlice.deletePost);
 
   const handleClick = async (e) => {
@@ -14,6 +14,12 @@ export default function ProjectCard({ project }) {
       console.error('Delete error:', err);
     }
   };
+
+  const handleEditClick = (e) => {
+    e.preventDefault();
+    onEdit();
+  };
+  // used chatGPT for this function to stop projectDetail from being called
 
   const tags = typeof project.tags === 'string'
     ? project.tags.split(',').map((t) => t.trim())
@@ -35,6 +41,11 @@ export default function ProjectCard({ project }) {
           ))}
         </div>
       </div>
+
+      <button type="button" onClick={handleEditClick} className="editButton">
+        Edit
+      </button>
+
       <button type="button" onClick={handleClick} className="deleteButton">
         delete
       </button>

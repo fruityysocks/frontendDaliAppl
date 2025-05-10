@@ -36,7 +36,8 @@ const postProject = async (project) => {
 
 const updateProject = async (project) => {
   try {
-    const response = await axios.patch(`${API_URL}/${project.id}/${API_KEY}`, project);
+    const response = await axios.put(`${API_URL}/${project.id}/${API_KEY}`, project);
+    console.log('Project updated successfully:', response.data);
     return response.data;
   } catch (error) {
     console.error('Error updating project:', error);
