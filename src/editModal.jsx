@@ -19,7 +19,6 @@ export default function EditModal({ project, onClose, onSave }) {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('hi');
     try {
       await updatePost({
         ...formData,
