@@ -15,7 +15,11 @@ export default function ProjectList() {
   }, [fetchPosts]);
 
   useEffect(() => {
-    setFilterTag(searchTerm);
+    if (searchTerm === '') {
+      setFilterTag('all');
+    } else {
+      setFilterTag(searchTerm);
+    }
   }, [searchTerm]);
 
   const filteredProjects = filterTag === 'all'
