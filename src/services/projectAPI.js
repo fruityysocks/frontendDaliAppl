@@ -30,7 +30,7 @@ const getProjects = async (term) => {
 const postProject = async (project) => {
   try {
     // const response = await axios.post(`${API_URL}/${API_KEY}`, project);
-    const response = await axios.post(`${API_URL}`, project);
+    const response = await axios.post(`${API_URL}/new`, project);
 
     return response.data;
   } catch (error) {
