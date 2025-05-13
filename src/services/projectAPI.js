@@ -1,8 +1,8 @@
 import axios from 'axios';
 
 // const API_KEY = '?key=p_dharampal';
-// const API_URL = 'https://lab5-platform-api-fruityysocks.onrender.com/projects';
-const API_URL = 'http://localhost:9090/api/posts';
+const API_URL = 'https://lab5-platform-api-fruityysocks.onrender.com/api/posts';
+// const API_URL = 'http://localhost:9090/api/posts';
 const getProjects = async (term) => {
   try {
     // const response = await axios.get(`${API_URL}/${API_KEY}`, {
