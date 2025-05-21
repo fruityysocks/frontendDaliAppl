@@ -23,15 +23,14 @@ function FallBack(props) {
 }
 
 function App(props) {
-  const [hasVisited, setHasVisited] = useState(true);
+  const [hasVisited, setHasVisited] = useState(false);
+  localStorage.setItem('hasVisited', false);
   const location = useLocation();
 
   useEffect(() => {
     const visited = localStorage.getItem('hasVisited');
-    if (visited === null) {
-      localStorage.setItem('hasVisited', 'false');
-      setHasVisited(false);
-    } else {
+    if (!visited) {
+      localStorage.setItem('hasVisited', 'true');
       setHasVisited(true);
     }
   }, []);
