@@ -54,6 +54,7 @@ const deleteUser = async ({ id }) => {
 
 const getNaps = async (term) => {
   try {
+    console.log(API_URL);
     const response = await axios.get(`${API_URL}/naps`, {
       params: {
         fields: ['content', 'date'],
