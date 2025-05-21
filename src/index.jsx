@@ -30,12 +30,11 @@ function App(props) {
   useEffect(() => {
     const visited = localStorage.getItem('hasVisited');
     if (!visited) {
-      localStorage.setItem('hasVisited', 'false');
-      setHasVisited(false);
+      localStorage.setItem('hasVisited', 'true');
+      setHasVisited(true);
     }
   }, []);
 
-  console.log(hasVisited);
   const hideNavBar = location.pathname === '/' && !hasVisited;
 
   return (
@@ -65,7 +64,6 @@ function App(props) {
 }
 
 const root = createRoot(document.getElementById('main'));
-console.log(localStorage.getItem('hasVisited'));
 root.render(
   <BrowserRouter>
     <SwipeWrapper>
