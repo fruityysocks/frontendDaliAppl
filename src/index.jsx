@@ -30,7 +30,7 @@ function App(props) {
   useEffect(() => {
     const visited = localStorage.getItem('hasVisited');
     if (!visited) {
-      localStorage.setItem('hasVisited', 'true');
+      localStorage.setItem('hasVisited', 'false');
       setHasVisited(false);
     }
   }, []);
@@ -66,7 +66,7 @@ function App(props) {
 }
 
 const root = createRoot(document.getElementById('main'));
-console.log('TEST');
+console.log(localStorage.getItem('hasVisited'));
 root.render(
   <BrowserRouter>
     <SwipeWrapper>
