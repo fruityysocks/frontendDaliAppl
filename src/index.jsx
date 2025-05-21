@@ -48,7 +48,7 @@ function App(props) {
           <Route
             path="/"
             element={
-      hasVisited ? <Navigate to="/napsx" replace /> : <LandingPage />
+      hasVisited ? <NapsList /> : <LandingPage />
     }
           />
           <Route path="/posts" element={<NapsList />} />
