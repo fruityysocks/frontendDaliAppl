@@ -6,13 +6,13 @@ export default function LandingPage() {
   const navigate = useNavigate();
 
   const handleNavigate = () => {
-    navigate('/posts');
+    navigate('/naps');
   };
 
   return (
     <div className="landing-page">
       <h1>Welcome to DALI&apos;s Social Media App!</h1>
-      <button type="button" onClick={handleNavigate}>Go to Posts</button>
+      <button type="button" onClick={handleNavigate}>Go to App</button>
     </div>
   );
 }

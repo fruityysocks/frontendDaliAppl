@@ -50,7 +50,6 @@ function App(props) {
       hasVisited ? (<Navigate to="/naps" replace />) : (<LandingPage />)
     }
           />
-          <Route path="/posts" element={<NapsList />} />
           <Route path="/users" element={<UserList />} />
           <Route path="/users/:userId" element={<Profile />} />
           <Route path="/naps" element={<NapsList />} />
