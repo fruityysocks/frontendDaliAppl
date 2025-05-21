@@ -1,5 +1,5 @@
 Front End for the Social Media App
-This is the frontend repository for a social media app built for the DALI fullstack challenge. It features clean, expressive visuals inspired by the DALI aesthetic and is designed for a smooth, swipeable user experience. The frontend is built using React and Javascript, with global state managed by Zustand and styled using SCSS.
+This is the frontend repository for a social media app built for the DALI fullstack challenge. It features clean, expressive visuals inspired by the DALI aesthetic and is designed for a smooth, swipeable user experience. The frontend is built using React and Javascript, with global state managed by Zustand and styled using SCSS. This app is designed for mobile devices. 
 
 Designs
 While we don’t have formal Figma mockups, the visual style takes inspiration from DALI’s branding and internal tools, featuring its signature color palette and interface patterns.
