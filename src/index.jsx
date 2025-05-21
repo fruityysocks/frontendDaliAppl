@@ -29,7 +29,7 @@ function App(props) {
   useEffect(() => {
     const visited = localStorage.getItem('hasVisited');
     if (visited === null) {
-      localStorage.setItem('hasVisited', 'true');
+      localStorage.setItem('hasVisited', 'false');
       setHasVisited(false);
     } else {
       setHasVisited(true);
@@ -37,7 +37,6 @@ function App(props) {
   }, []);
 
   console.log(hasVisited);
-  if (hasVisited === null) return null;
   const hideNavBar = location.pathname === '/' && !hasVisited;
 
   return (
