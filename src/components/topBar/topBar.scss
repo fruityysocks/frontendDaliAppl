@@ -1,0 +1,26 @@
+@import "../../variables";
+
+.topBar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: $color-white;
+  box-shadow: $box-shadow;
+  padding: 0.5rem 1rem;
+  font-family: $font-stack;
+  z-index: 100;
+  height: fit-content;
+  border-bottom: 2px solid $color-logo;
+
+  .topBarNav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .logo img {
+      padding: 0.5rem;
+      height: 4rem;
+    }
+  }
+}

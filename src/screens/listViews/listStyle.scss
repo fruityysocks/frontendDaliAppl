@@ -1,0 +1,65 @@
+@import "../../variables";
+
+.users {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 4rem;
+  margin-top: 6rem;
+  background-color: $color-bg;
+  min-height: 100vh;
+  box-sizing: border-box;
+  width: 100vw;
+}
+
+
+.userList {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  padding: 1.6rem;
+  background-color: $color-bg;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+.userList a {
+  text-decoration: none;
+  color: $color-text-dark;
+}
+
+.napsList {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  padding: 1.6rem;
+  padding-bottom: 4rem;
+  margin-top: 6rem;
+
+  background-color: $color-bg;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+.napsList a {
+  text-decoration: none;
+  color: inherit;
+  border-radius: $border-radius;
+  box-shadow: $box-shadow;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  background-color: $color-white;
+}
+
+.filter {
+  background-color: $color-bg;
+  border-radius: 20px;
+  padding: 1rem;
+  width: 90%;
+  margin: 1rem;
+  border: 3px solid $color-logo;
+  box-shadow: $box-shadow;
+}
+
+.filter:focus {
+  outline: none;
+  border: 3px solid #445089;
+}

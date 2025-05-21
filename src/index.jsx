@@ -1,0 +1,76 @@
+import React, { useState, useEffect } from 'react';
+import { createRoot } from 'react-dom/client';
+import './style.scss';
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+  Navigate,
+  useLocation,
+} from 'react-router';
+import NavBar from './components/navBar/navBar';
+import UserList from './screens/listViews/userList';
+import Profile from './screens/profile/profile';
+import Register from './screens/register/register';
+import LandingPage from './screens/landingPage/landingPage';
+import NapsList from './screens/listViews/napsList';
+import NapDetail from './screens/detailedViews/napDetailed';
+import TopBar from './components/topBar/topBar';
+import SwipeWrapper from './components/swipeWrapper';
+
+function FallBack(props) {
+  return <div> URL not found </div>;
+}
+
+function App(props) {
+  const [hasVisited, setHasVisited] = useState(true);
+  const location = useLocation();
+
+  useEffect(() => {
+    const visited = localStorage.getItem('hasVisited');
+    if (visited === null) {
+      localStorage.setItem('hasVisited', 'true');
+      setHasVisited(false);
+    } else {
+      setHasVisited(true);
+    }
+  }, []);
+
+  if (hasVisited === null) return null;
+  const hideNavBar = location.pathname === '/' && !hasVisited;
+
+  return (
+    <div className="app">
+      {!hideNavBar && <TopBar />}
+      <div className="notNavBar">
+        <Routes>
+          {!hasVisited && <Route path="/" element={<LandingPage />} />}
+          <Route
+            path="/"
+            element={
+      hasVisited ? <Navigate to="/naps" replace /> : <LandingPage />
+    }
+          />
+          <Route path="/posts" element={<NapsList />} />
+          <Route path="/users" element={<UserList />} />
+          <Route path="/users/:userId" element={<Profile />} />
+          <Route path="/naps" element={<NapsList />} />
+          <Route path="/naps/:napId" element={<NapDetail />} />
+          <Route path="/register" element={<Register />} />
+
+          <Route path="*" element={<FallBack />} />
+        </Routes>
+      </div>
+      {!hideNavBar && <NavBar />}
+    </div>
+  );
+}
+
+const root = createRoot(document.getElementById('main'));
+root.render(
+  <BrowserRouter>
+    <SwipeWrapper>
+      <App />
+    </SwipeWrapper>
+  </BrowserRouter>,
+);

@@ -1,0 +1,29 @@
+@import './variables'; 
+
+:root {
+  text-size-adjust: 100%;
+}
+
+html {
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: $font-stack;
+  background-color: $color-bg;
+  color: $color-text-dark;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
