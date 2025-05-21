@@ -48,13 +48,13 @@ function App(props) {
           <Route
             path="/"
             element={
-      hasVisited ? <Navigate to="/naps" replace /> : <LandingPage />
+      hasVisited ? <Navigate to="/napsx" replace /> : <LandingPage />
     }
           />
           <Route path="/posts" element={<NapsList />} />
           <Route path="/users" element={<UserList />} />
           <Route path="/users/:userId" element={<Profile />} />
-          <Route path="/naps" element={<NapsList />} />
+          <Route path="/napsx" element={<NapsList />} />
           <Route path="/naps/:napId" element={<NapDetail />} />
           <Route path="/register" element={<Register />} />
 
