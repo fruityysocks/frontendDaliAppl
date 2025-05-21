@@ -16,7 +16,6 @@ export default function NapDetail() {
   }, [napId, nap]);
 
   if (!nap) return <p>Loading...</p>;
-  console.log(nap);
 
   const base64String = nap.imageFile.data;
   const { contentType } = nap.imageFile;

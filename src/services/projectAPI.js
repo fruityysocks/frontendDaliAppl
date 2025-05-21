@@ -35,7 +35,6 @@ const getUser = async (userId) => {
 const updateUser = async (user) => {
   try {
     const response = await axios.put(`${API_URL}/users/${user.id}`, user);
-    console.log('user updated sucessfully!', response.data);
     return response.data;
   } catch (error) {
     console.error('error updating user:', error);
@@ -79,7 +78,6 @@ const getNap = async (napId) => {
 };
 
 const addReply = async (napId, message) => {
-  console.log(napId);
   try {
     const response = await axios.put(
       `${API_URL}/naps/${napId}/addReply`,

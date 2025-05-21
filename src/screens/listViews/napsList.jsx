@@ -6,7 +6,6 @@ import './listStyle.scss';
 
 export default function NapsList() {
   const naps = useStore((state) => state.napSlice.all);
-  console.log('hi', naps, Date.now());
   const fetchNaps = useStore((state) => state.napSlice.fetchNaps);
 
   useEffect(() => {

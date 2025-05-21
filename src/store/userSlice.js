@@ -14,11 +14,9 @@ const createUserSlice = (set) => ({
 
     fetchUsers: async () => {
       const data = await getUsers();
-      console.log(data);
       set(
         (draft) => {
           draft.userSlice.all = data;
-          console.log(draft.userSlice.all);
         },
         false,
         'users/fetchUsers',

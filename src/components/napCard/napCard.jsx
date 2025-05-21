@@ -18,7 +18,6 @@ export default function NapCard(napId) {
   const base64String = nap.imageFile.data;
   const { contentType } = nap.imageFile;
   const imageSrc = `data:${contentType};base64,${base64String}`;
-  console.log(imageSrc);
   return (
     <div className="napCard">
       <div className="napPicture">

@@ -10,11 +10,9 @@ const createNapSlice = (set) => ({
 
     fetchNaps: async () => {
       const data = await getNaps();
-      console.log(data);
       set(
         (draft) => {
           draft.napSlice.all = data;
-          console.log(draft.napSlice.all);
         },
         false,
         'naps/fetchNaps',

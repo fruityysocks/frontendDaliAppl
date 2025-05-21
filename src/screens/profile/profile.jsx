@@ -5,15 +5,11 @@ import './profile.scss';
 
 export default function Profile() {
   const { userId } = useParams();
-  console.log(userId);
 
   const deleteUser = useStore((state) => state.userSlice.deleteUser);
   const fetchUserById = useStore((state) => state.userSlice.fetchUserById);
-  // const updateUser = useStore((state) => state.userSlice.updateUser);
 
   const user = useStore((state) => state.userSlice.selected);
-  console.log(userId);
-  console.log(user);
 
   useEffect(() => {
     if (!user || user.id !== userId) {

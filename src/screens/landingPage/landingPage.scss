@@ -31,24 +31,7 @@
     font-size: 1.25rem;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.3s ease;
-
-    // &:hover {
-    //   background-color: $color-accent-3;
-    //   transform: scale(1.05);
-    // }
-
-    // animation: pulse 2s infinite ease-in-out;
   }
-
-  // @keyframes pulse {
-  //   0%,
-  //   100% {
-  //     transform: scale(1);
-  //   }
-  //   50% {
-  //     transform: scale(1.05);
-  //   }
-  // }
 
   @keyframes floatText {
     0%,

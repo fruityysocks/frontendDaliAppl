@@ -6,7 +6,6 @@ import './listStyle.scss';
 
 export default function UserList() {
   const users = useStore((state) => state.userSlice.all);
-  console.log('hi', users, Date.now());
   const fetchUsers = useStore((state) => state.userSlice.fetchUsers);
   const [searchTerm, setSearchTerm] = useState('all');
   const [filterTag, setFilterTag] = useState('all');
