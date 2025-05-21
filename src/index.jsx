@@ -66,6 +66,7 @@ function App(props) {
 }
 
 const root = createRoot(document.getElementById('main'));
+console.log('TEST');
 root.render(
   <BrowserRouter>
     <SwipeWrapper>
