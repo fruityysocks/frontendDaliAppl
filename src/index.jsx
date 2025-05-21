@@ -5,14 +5,14 @@ import {
   BrowserRouter,
   Routes,
   Route,
-  // Navigate,
+  Navigate,
   useLocation,
 } from 'react-router';
 import NavBar from './components/navBar/navBar';
 import UserList from './screens/listViews/userList';
 import Profile from './screens/profile/profile';
 import Register from './screens/register/register';
-// import LandingPage from './screens/landingPage/landingPage';
+import LandingPage from './screens/landingPage/landingPage';
 import NapsList from './screens/listViews/napsList';
 import NapDetail from './screens/detailedViews/napDetailed';
 import TopBar from './components/topBar/topBar';
@@ -36,6 +36,7 @@ function App(props) {
     }
   }, []);
 
+  console.log(hasVisited);
   if (hasVisited === null) return null;
   const hideNavBar = location.pathname === '/' && !hasVisited;
 
@@ -44,17 +45,17 @@ function App(props) {
       {!hideNavBar && <TopBar />}
       <div className="notNavBar">
         <Routes>
-          {/* {!hasVisited && <Route path="/" element={<LandingPage />} />}
+          {!hasVisited && <Route path="/" element={<LandingPage />} />}
           <Route
             path="/"
             element={
-      hasVisited ? (<Navigate to="/napsx" replace />) : (<LandingPage />)
+      hasVisited ? (<Navigate to="/naps" replace />) : (<LandingPage />)
     }
-          /> */}
+          />
           <Route path="/posts" element={<NapsList />} />
           <Route path="/users" element={<UserList />} />
           <Route path="/users/:userId" element={<Profile />} />
-          <Route path="/napsx" element={<NapsList />} />
+          <Route path="/naps" element={<NapsList />} />
           <Route path="/naps/:napId" element={<NapDetail />} />
           <Route path="/register" element={<Register />} />
 
