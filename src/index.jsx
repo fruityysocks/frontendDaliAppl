@@ -43,7 +43,7 @@ function App(props) {
       {!hideNavBar && <TopBar />}
       <div className="notNavBar">
         <Routes>
-          {!hasVisited && <Route path="/" element={<LandingPage />} />}
+          {/* {!hasVisited && <Route path="/" element={<LandingPage />} />} */}
           <Route
             path="/"
             element={
