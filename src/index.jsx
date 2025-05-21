@@ -31,7 +31,7 @@ function App(props) {
     const visited = localStorage.getItem('hasVisited');
     if (!visited) {
       localStorage.setItem('hasVisited', 'true');
-      setHasVisited(true);
+      setHasVisited(false);
     }
   }, []);
 
