@@ -5,14 +5,14 @@ import {
   BrowserRouter,
   Routes,
   Route,
-  Navigate,
+  // Navigate,
   useLocation,
 } from 'react-router';
 import NavBar from './components/navBar/navBar';
 import UserList from './screens/listViews/userList';
 import Profile from './screens/profile/profile';
 import Register from './screens/register/register';
-import LandingPage from './screens/landingPage/landingPage';
+// import LandingPage from './screens/landingPage/landingPage';
 import NapsList from './screens/listViews/napsList';
 import NapDetail from './screens/detailedViews/napDetailed';
 import TopBar from './components/topBar/topBar';
